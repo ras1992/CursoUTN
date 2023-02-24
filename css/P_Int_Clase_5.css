@@ -1,0 +1,74 @@
+/* https://cssgradient.io/ diseño backgraund*/
+
+#body {
+    background-color: rgb(12, 24, 41);
+}
+
+#main {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.fondoCarta {
+    background-color: rgb(20, 37, 61);
+    border-radius: 20px;
+}
+
+.formatoImagen {
+    padding: 20px;
+    border-radius: 30px;
+    width: 250px;
+    height: 250px;
+}
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.textoCarta {
+    color: rgb(139, 172, 208);
+
+}
+
+.textoEth {
+    color: rgb(0, 255, 247);
+}
+
+.card-cuerpo {
+    padding: -0px 20px 20px 20px;
+}
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+}
+
+.fotoPerfil {
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px double aliceblue;
+}
+
+.datosPerfil {
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+}
+.espacio{
+    margin: 5px;
+}
