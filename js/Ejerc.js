@@ -1,7 +1,7 @@
 menu()
 
 function menu() {
-    num = parseInt(prompt("Elejir ejercicios del 1 al 14 referencia: \n https://dandelion-rocket-d56.notion.site/Ejercitacion-JS-b041fe1fc5b64fdabe03104343119a92"))
+    num = parseInt(prompt("Elejir ejercicios del 1 al 14 referencia: \n "))
     switch (num) {
         case 1:
             suma()
@@ -48,6 +48,7 @@ function menu() {
     
         default:
             alert(`No eligio ninguna opcion`)
+        
         case 8:
             var respuesta = confirm("quiere ingresar nuevamente?")
 
