@@ -47,8 +47,10 @@ console.log("Apellido más de 6")
 let array2 = ["Florencia", "Lucas", "Ezequiel", "Matias", "Bruno", "Gustavo", "Martin"]
 console.log(array2.filter(p => p.length > 6))
 
+
 console.log("Apellido con M")
 console.log(array2.filter(p => p=p.toLocaleLowerCase().startsWith("m")))
+
 
 console.log("Apellido todo en mayus")
 let Mayus = array2.map(function(nombre) {
@@ -61,3 +63,9 @@ let array3 = ["azul", "amarillo", "rojo", "verde", "café", "rosa"]
 let color =prompt("Ingrese un color en minusculas Ej: rojo ")
 
 console.log(array3.some(n => n === color))
+
+if(array3.some(n => n === color)){
+    console.log("Existe el color")
+}else{
+    console.log("No existe el color")
+}
