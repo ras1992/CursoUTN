@@ -1,85 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/9clase.css">
-    <!-- link de bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/10clase.css">
+  <!-- link de bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <title>Document</title>
+  <title>Document</title>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <button class="btn btn-outline-success" id="modal">Ingresar</button>
-                </form>
 
-                <div class="modal" tabindex="-1" id="exampleModal">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Login</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">Email</label>
-                              <input type="email" class="form-control" id="emailEntrada" >
-                            </div>
-                            <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                              <input type="password" class="form-control" id="claveEntrada">
-                            </div>
-                            <button class="btn btn-primary" id="login">Ingresar</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
+<body id="body">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button id="btn_open" class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <i><img class="icono" src="../media/iconoK.ico"></i>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          
+          </ul>
+
+
+          <div class="dropstart btnEsp">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false" id="modal">
+              Iniciar Sesión
+            </button>
+
+            <div class="modal" tabindex="-1" id="Modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailEntrada">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="claveEntrada">
+                      </div>
+                      <button class="btn btn-primary" id="login">Ingresar</button>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-          </nav>
-    </header>
-    <main>
-        <h1 class="h1">Bienvenido Js</h1>
-        <h4 class="h1">Js obtiene valor en dolares: <span id="dolarHoy"></span> </h4>
-        
-    
 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="../js/10clase.js"> </script>
+            <div class="modal" tabindex="-1" id="Modal1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Usuario: Ramiro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <button type="button" class="btn btn-secondary" id="offline">
+                        <i class="bi bi-file-earmark"></i> Desconectarme
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+
+  </header>
+
+  <menu>
+    <div class="menu__side" id="menu_side">
+
+      <div class="centrado">
+        <img class="fotoPerfil " src="../media/saitama.jpg" alt="">
+      </div>
+      <div class="options__menu margenImagen">
+
+
+        <div class="redes">
+          <a href="https://www.twitter.com/kuspitaramiro">
+            <img src="../media/icons8-twitter-30.png" alt="">
+          </a>
+
+          <a href="https://www.facebook.com/kuspita20">
+            <img src="../media/icons8-facebook-30.png" alt="">
+          </a>
+
+          <a href="https://www.instagram.com/kuspita20">
+            <img src="../media/icons8-instagram-30.png" alt="">
+          </a>
+
+          <a href="https://github.com/ras1992">
+            <img src="../media/icons8-github-30.png" alt="">
+          </a>
+        </div>
+      <div class="margen">
+        <div>
+          <button type="button" class="btn btn-secondary" id="volver">
+            <i class="bi bi-file-earmark"></i> Inicio
+          </button>
+        </div>
+
+
+        <div>
+          <button type="button" class="btn btn-secondary" id="datos">
+            <i class="bi bi-file-earmark"></i> Datos
+          </button>
+        </div>
+
+
+
+        <div>
+          <button type="button" class="btn btn-secondary" id="informacion">
+            <i class="bi bi-file-earmark"></i> Información
+          </button>
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-secondary" id="contactar">
+            <i class="bi bi-file-earmark"></i> Contactar
+          </button>
+        </div>
+
+      </div>
+      
+  </menu>
+
+
+  <main id="main">
+    <div id="ventana1">
+      <h1 class="h1">Bienvenido Js</h1>
+      <h4 class="h1">El valor del Dolar Blue hoy es de: <span id="dolarHoy"></span></h4>
+    </div>
+
+  </main>
+  <script src="../js/crypto-js.min.js"></script>
+  <script src="../js/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="../js/10clase.js"> </script>
 </body>
+
 </html>
