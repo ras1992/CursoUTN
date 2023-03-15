@@ -60,11 +60,11 @@ let Mayus = array2.map(function(nombre) {
 console.log(Mayus);
 
 let array3 = ["azul", "amarillo", "rojo", "verde", "café", "rosa"]
-let color =prompt("Ingrese un color en minusculas Ej: rojo ")
+let color =prompt("Ingrese un color: Ej: rojo\n Luego inspeccione el console")
 
-console.log(array3.some(n => n === color))
+console.log(array3.some(n => n === color.toLocaleLowerCase()))
 
-if(array3.some(n => n === color)){
+if(array3.some(n => n === color.toLocaleLowerCase())){
     console.log("Existe el color")
 }else{
     console.log("No existe el color")

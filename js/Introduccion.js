@@ -54,10 +54,10 @@
 menu()
 
 function menu() {
-    num = parseInt(prompt("Elija un ejercicio: \n 1_ suma \n2_ perimetro \n3_ temperatura \n4_ Par eh Impar \n5_ texto mayus\n6_ Nota de alumno\n7_ Meses "))
+    num = parseInt(prompt("Elija un ejercicio: \n 1_ resta \n2_ perimetro \n3_ temperatura \n4_ Par eh Impar \n5_ texto mayus\n6_ Nota de alumno\n7_ Meses "))
     switch (num) {
         case 1:
-            suma()
+            resta()
             break;
         case 2:
             alert(calcular_perimetro(parseInt(prompt("Ingrese superficie en m²: "))))
@@ -98,9 +98,9 @@ function menu() {
 
 
 // Ejercicio 1
-function suma() {
+function resta() {
     var a = parseInt(prompt("Ingrese 1° número: "))
-    a += parseInt(prompt("Ingrese 2° número: "))// 
+    a -= parseInt(prompt("Ingrese 2° número: "))// 
     alert(`Resultado: ${a}`)
 }
 

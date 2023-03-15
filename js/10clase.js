@@ -240,7 +240,12 @@ infoButton.addEventListener('click', () => {
 // Boton Datos
 datosButton.addEventListener('click', () => {
     // Cambiar el contenido del main a datos personales
-    mainContent.innerHTML = '<p>Contenido de datos personales</p>';
+    fetch('10claseDatos.html')
+            .then(response => response.text())
+            .then(data => {
+                // Insertar el contenido en el main
+                mainContent.innerHTML = data; 
+            });
 });
 
 
