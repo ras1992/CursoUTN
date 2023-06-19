@@ -1,37 +1,55 @@
 #body {
-    background-color: aliceblue;
+    background-color: #ffe4b8;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+h1,h4,footer{
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .fondo1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(0, 255, 0);
+    background-color: #5e5a54;
     margin: 10px;
     padding: 10px;
     border-radius: 34px;
     text-decoration: none;
     color: inherit;
 }
+.fondo1:hover{
+    /* box-shadow: 0 5px 10px #00000073; */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+}
+
 
 .fondo2 {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(59, 77, 59);
+    background-color:#e6d1b1;
     margin: 10px;
     padding: 10px;
     border-radius: 34px;
 }
+
 .fondo3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(0, 255, 0, 0.377);
+    background-color: #b8aa95;
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
 }
 
+.fondo3 .btn {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #0887bd;
+  }
+  .fondo3 .btn:hover {
+    background-color:#64c3e8;
+  }
 .fondo4 {
     display: flex;
     flex-direction: column;
@@ -40,8 +58,15 @@
     padding: 10px;
     border-radius: 15px;
 }
+
 .fondo4 .borde {
     border-radius: 50%;
+}
+
+.centradoV {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 main {

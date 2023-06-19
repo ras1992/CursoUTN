@@ -127,6 +127,7 @@ boton.addEventListener("click", obtenerDatos)
 
 var miBoton = document.getElementById('modal');
 miBoton.addEventListener('click', function () {
+    ejecutarBotoInicio();
     event.preventDefault();
     var id = miBoton.id;
     // detecta que Id de Boton esta activa
@@ -203,7 +204,7 @@ const contactoButton = document.getElementById('contactar');
 const lecturaButton = document.getElementById('leerdatos');
 const mainContent = document.getElementById('main');
 
-const defaultContent = document.getElementById('ventana1').innerHTML;
+const defaultContent = document.getElementById('main2');
 
 
 // solucion a un error de relogin
@@ -213,23 +214,21 @@ function ejecutarBotoInicio() {
 }
 // Boton inicio
 document.getElementById('volver').addEventListener('click', () => {
-    var id = miBoton.id;
-    console.log(miBoton)
+    var id = miBoton.id
     if (id === "modal") {
-        mainContent.innerHTML = defaultContent;
+        window.addEventListener('load', mainContent.innerHTML = defaultContent.innerHTML);
     } else {
-        mainContent.innerHTML = defaultContent;
+        window.addEventListener('load', mainContent.innerHTML = defaultContent.innerHTML);
         agregaValor();
     }
-    // Cambiar el contenido del main al contenido de la ventana 1
-
+    // Cambiar el contenido del main al contenido
 })
 
 
 // Boton informacion
 infoButton.addEventListener('click', () => {
     // Obtener el contenido de la página "informacion.html"
-    fetch('tareaMaquetacion.html')
+    fetch('10claseInformacion.html')
         .then(response => response.text())
         .then(data => {
             // Insertar el contenido en el main
@@ -241,11 +240,11 @@ infoButton.addEventListener('click', () => {
 datosButton.addEventListener('click', () => {
     // Cambiar el contenido del main a datos personales
     fetch('10claseDatos.html')
-            .then(response => response.text())
-            .then(data => {
-                // Insertar el contenido en el main
-                mainContent.innerHTML = data; 
-            });
+        .then(response => response.text())
+        .then(data => {
+            // Insertar el contenido en el main
+            mainContent.innerHTML = data;
+        });
 });
 
 
@@ -310,6 +309,15 @@ function tomarDatosContacto() {
     const formContactoButton = document.getElementById('formContacto');
 
 
+    const toastTrigger = document.getElementById('formContacto')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+        toastTrigger.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastLiveExample)
+            toast.show()
+        })
+    }
+
     // Agregar un evento al botón "Guardar"
     formContactoButton.addEventListener('click', () => {
         // Obtener los valores de los campos de texto y la casilla de texto
@@ -330,6 +338,8 @@ function tomarDatosContacto() {
         // Convertir los datos a JSON
         datosJSON.push(JSON.stringify(datos))
         console.log("datosJSON: ", datosJSON)
+
+        smsWhat(nombre, correo, detalle)
         limpiar()
 
         //    // Encriptar los datos
@@ -345,6 +355,22 @@ function tomarDatosContacto() {
 
     });
 }
+// Enviar sms al usuario
+
+function smsWhat(nombre, correo, detalle) {
+    // dato= encodeURIComponent(dato.replace(/\n/g, '%0A'));
+    url = `http://ras.infinityfreeapp.com/Extras/smsW.php?nom=${nombre}&cor=${correo}&det=${detalle}`
+    setTimeout(() => {
+        window.open(url, '_blank');
+    }, 2000);
+   
+    // const link = document.createElement('a');
+    // link.setAttribute(`href`, `http://ras.infinityfreeapp.com/Extras/smsW.php?texto=${dato}`);
+    // link.innerText = 'Ir a Ejemplo';
+    // document.body.appendChild(link);
+
+}
+
 //    limpiar campos formulario
 function limpiar() {
     document.getElementById('nombre').value = "";
@@ -391,3 +417,187 @@ function mostrarDatos() {
         });
     }
 }
+animacion()
+/* //////////////// Información /////////////// */
+function animacion() {
+    const nombre = "Kuspita, Ramiro";
+    const maquina_escribir_anim = document.querySelector(".maquina_escribir_anim ");
+
+    let i = 0;
+    let esBorrado = false;
+    let count = 0; // variable de conteo
+
+    function type() {
+        const texto = nombre.slice(0, i);
+
+        if (!esBorrado) {
+            maquina_escribir_anim.textContent = texto + "_";
+            i++;
+            if (i > nombre.length) {
+                maquina_escribir_anim.classList.add("complete");
+                setTimeout(() => {
+                    maquina_escribir_anim.classList.add("blink");
+                    setTimeout(() => {
+                        maquina_escribir_anim.classList.remove("blink");
+                        setTimeout(() => {
+                            maquina_escribir_anim.classList.add("blink");
+                            setTimeout(() => {
+                                maquina_escribir_anim.classList.remove("blink");
+                                setTimeout(() => {
+                                    maquina_escribir_anim.classList.add("blink");
+                                    setTimeout(() => {
+                                        maquina_escribir_anim.classList.remove("blink");
+                                        setTimeout(() => {
+                                            maquina_escribir_anim.classList.add("complete");
+                                            maquina_escribir_anim.classList.remove("blink");
+                                        }, 10000);
+                                    }, 500);
+                                }, 500);
+                            }, 500);
+                        }, 500);
+                    }, 500);
+                }, 300);
+
+
+            }
+        } else {
+            maquina_escribir_anim.textContent = texto + "";
+            i--;
+            // incrementar la variable de conteo
+            count++;
+            console.log("Contando: " + count)
+            if (i < 9) {
+                esBorrado = false;
+            }
+        }
+
+        setTimeout(() => {
+            type();
+        }, 300);
+
+        if (i === nombre.length && count < 1 * 15) {
+            esBorrado = true;
+            setTimeout(() => {
+                type();
+            }, 10500);
+        }
+    }
+
+    let timerId = setTimeout(type, 0);
+}
+/* //////////////// Información /////////////// */
+
+
+/* //////////////// Anim bienvenida /////////////// */
+
+window.addEventListener('load', function () {
+    const textoProfesion = document.getElementById('texto-profesion');
+    const textoEspecialidad = document.getElementById('texto-especialidad');
+    const profesion = "Programador";
+    const especialidad = "Desarrollador web";
+
+    // Espera 2 segundos antes de iniciar la animación
+    setTimeout(function () {
+        // Agrega la clase "escribiendo" para la profesión
+        textoProfesion.classList.add('escribiendo');
+
+        // Simula el efecto de la máquina de escribir para la profesión
+        for (let i = 0; i < profesion.length; i++) {
+            setTimeout(function () {
+                textoProfesion.innerHTML = profesion.slice(0, i + 1);
+            }, 100 * i); // Espera 100ms por cada letra
+        }
+
+        // Espera a que termine la animación de la profesión antes de borrarla y mostrar la especialidad
+        setTimeout(function () {
+            // Simula el efecto de borrar la profesión
+            for (let i = profesion.length; i >= 0; i--) {
+                setTimeout(function () {
+                    textoProfesion.innerHTML = profesion.slice(0, i);
+                }, 100 * (profesion.length - i)); // Espera 100ms por cada letra borrada
+            }
+
+            // Espera a que termine de borrar la profesión antes de mostrar la especialidad
+            setTimeout(function () {
+                // Agrega la clase "escribiendo" para la especialidad
+                textoEspecialidad.classList.add('escribiendo');
+
+                // Simula el efecto de la máquina de escribir para la especialidad
+                for (let i = 0; i < especialidad.length; i++) {
+                    setTimeout(function () {
+                        textoEspecialidad.innerHTML = especialidad.slice(0, i + 1);
+                    }, 100 * i); // Espera 100ms por cada letra
+                }
+            }, 1000); // Espera 1 segundo después de borrar la profesión
+        }, (profesion.length * 100) + 1000); // Espera el tiempo total de la animación de la profesión más 1 segundo
+    }, 2000); // Espera 2 segundos antes de iniciar la animación
+});
+
+/* //////////////// Anim bienvenida /////////////// */
+
+
+////////////// animacion iconos ///////////////
+const root = document.documentElement;
+const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+const marqueeContent = document.querySelector("ul.marquee-content");
+
+function animIconos() {
+    root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+        marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
+}
+window.addEventListener('load', animIconos())
+
+////////////// dark mode ///////////////
+const cambioEstiloBtn = document.getElementById('cambio-estilo');
+var ind = 1
+
+cambioEstiloBtn.addEventListener('click', () => {
+    // Cambiar el contenido del main a datos personales
+    if (ind == 0) {
+        console.log("si")
+        ind = 1;
+        cambioEstilo(ind)
+    } else {
+        console.log("no")
+        ind = 0;
+        cambioEstilo(ind)
+    }
+});
+cambioEstilo(ind)
+function cambioEstilo(n) {
+    //elije la opcion nocturna como primera
+    if (ind == 1) {
+        var color = 'rgba(226, 132, 75,1)'
+        var fondo = 'rgba(53, 57, 59,0.5)'
+        var fondoCol = 'rgba(53, 57, 59, 1)'
+    } else {
+        var color = '#E2844B'
+        var fondoCol = 'rgba(219, 219, 219, 1)'
+    }
+
+    document.documentElement.style.setProperty('--ras1', color);
+    document.documentElement.style.setProperty('--ras2', fondo);
+    document.documentElement.style.setProperty('--ras3', fondoCol);
+}
+
+// Boton informacion
+
+function cartaBtnF(){
+        // Obtener el contenido de la página "Carta Presentacion"
+        fetch('10clasePresentacion.html')
+            .then(response => response.text())
+            .then(data => {
+                // Insertar el contenido en el main
+                mainContent.innerHTML = data;
+                es()
+            });
+}
+
+// Obtener el elemento HTML con id="año"
+const elementoAnio = document.getElementById("año");
+// Obtener el año actual
+const anioActual = new Date().getFullYear();
+// Asignar el valor del año actual al elemento HTML
+elementoAnio.textContent = anioActual;

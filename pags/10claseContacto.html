@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
@@ -20,10 +19,23 @@
           <label for="detalle" class="form-label">Detalle:</label>
           <textarea class="form-control" id="detalle" name="detalle" rows="3"></textarea>
       
-          <button id="formContacto">Guardar</button>
+          <button class="btn btn-secondary" id="formContacto">Guardar</button>
         </div>
       </div>
       
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="../media/iconoK.png" class="rounded me-2 iconoSms" alt="...">
+            <strong class="me-auto">Mensaje Enviado...</strong>
+            <small>...</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            El mensaje fue enviado con exito, Ramiro se contactara en su momento.
+          </div>
+        </div>
+      </div>
     <script src="../js/crypto-js.min.js"></script>
     <script src="../js/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
